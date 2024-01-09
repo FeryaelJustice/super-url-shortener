@@ -1,5 +1,18 @@
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
 export default async function handler(req, res) {
   const { url } = req.body;
-  const shortURL = Math.random().toString(36).substr(2, 5);
-  res.status(200).send({ url, shortURL })
+  const shortUrl = Math.random().toString(36).substr(2, 5);
+
+  try {
+    const data = await prisma.link.create({
+      data: { url, shortUrl },
+    })
+
+    return res.status(200).send(data)
+  } catch (error) {
+    return res.status(500).send({ error })
+  }
 }
