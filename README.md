@@ -1,9 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SUPER URL SHORTENER Tool by Feryael Justice
 
 ## Getting Started
 
-First, run the development server:
+First, download and install the dependencies:
 
+```bash
+npm install
+```
+
+Second, run the project:
 ```bash
 npm run dev
 # or
